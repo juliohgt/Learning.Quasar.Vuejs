@@ -1,15 +1,19 @@
 <template>
   <div class="q-pa-md">
-    <q-table
+    <!-- <q-table
       :dense="$q.screen.lt.sm"
       title="Treats"
       :rows="rows"
       :columns="columns"
       row-key="name"
-    ></q-table>
+    ></q-table> -->
+    <iframe src="https://calendar.google.com/calendar/embed?height=914&wkst=2&bgcolor=%23616161&ctz=America%2FSao_Paulo&mode=AGENDA&showNav=1&showCalendars=0&showTz=0&showTabs=0&showPrint=0&showDate=1&showTitle=1&src=a21mcGJtY2J0c2FxcGNjNTMyYXY4bnVscmNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23795548" style="border:solid 1px #777" width="400" height="914" frameborder="0" scrolling="yes"></iframe>
   </div>
 </template>
 <script>
+import { onMounted, toRefs, reactive } from 'vue'
+import api from '../service/api'
+
 const columns = [
   {
     name: "name",
@@ -153,9 +157,21 @@ const rows = [
 export default {
   name: "TableComponents",
   setup() {
+    
+    const data = reactive({
+      channels: {}
+    })
+
+     onMounted(async () => {
+      const response = await api.all();
+      const response2 = await api.all2();
+      data.channels = response
+    })
+
     return {
       rows,
       columns,
+      ...toRefs(data)
     };
   },
 };
