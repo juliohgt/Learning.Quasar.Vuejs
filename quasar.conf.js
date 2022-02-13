@@ -139,9 +139,9 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
-        description: `A Quasar Framework app`,
+        name: `Agenda ADM`,
+        short_name: `Agenda ADM`,
+        description: `Agenda de eventos adm`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

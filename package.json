@@ -1,8 +1,8 @@
 {
   "name": "helloworld",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "description": "Agenda de eventos ADM blumenau",
+  "productName": "Agenda ADM",
   "author": "Júlio Henrique <juliohgt@hotmail.com>",
   "private": true,
   "scripts": {
